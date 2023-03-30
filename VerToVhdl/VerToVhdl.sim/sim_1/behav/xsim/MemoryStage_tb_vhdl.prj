@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl2008 xil_defaultlib  \
+"../../../../VerToVhdl.srcs/sources_1/new/data_memory.vhd" \
+"../../../../VerToVhdl.srcs/sources_1/new/seven_seg_controller.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../VerToVhdl.srcs/sources_1/new/MemoryStage.vhd" \
+"../../../../VerToVhdl.srcs/sources_1/imports/DSD2-Lab5/bcd_seven_seg_converter.vhd" \
+"../../../../VerToVhdl.srcs/sim_1/new/MemoryStageTB.vhd" \
+
+# Do not sort compile order
+nosort

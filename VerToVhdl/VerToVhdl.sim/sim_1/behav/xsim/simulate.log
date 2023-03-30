@@ -1,0 +1,11 @@
+Time resolution is 1 ps
+Error: Error: Active_Digit is 7 but should be 0
+Time: 55 ns  Iteration: 0  Process: /MemoryStage_tb/stimulus  File: E:/SchoolWork/VivadoProjects/DSD2-Lab5/VerToVhdl/VerToVhdl.srcs/sim_1/new/MemoryStageTB.vhd
+Error: Error: Seven_Seg_Digit is 01 but should be 00
+Time: 55 ns  Iteration: 0  Process: /MemoryStage_tb/stimulus  File: E:/SchoolWork/VivadoProjects/DSD2-Lab5/VerToVhdl/VerToVhdl.srcs/sim_1/new/MemoryStageTB.vhd
+Error: Error: RegWrite is '0' but should be '1'
+Time: 95 ns  Iteration: 0  Process: /MemoryStage_tb/stimulus  File: E:/SchoolWork/VivadoProjects/DSD2-Lab5/VerToVhdl/VerToVhdl.srcs/sim_1/new/MemoryStageTB.vhd
+Error: Error: Active_Digit is 7 but should be 2
+Time: 95 ns  Iteration: 0  Process: /MemoryStage_tb/stimulus  File: E:/SchoolWork/VivadoProjects/DSD2-Lab5/VerToVhdl/VerToVhdl.srcs/sim_1/new/MemoryStageTB.vhd
+Error: Error: Seven_Seg_Digit is 01 but should be 02
+Time: 95 ns  Iteration: 0  Process: /MemoryStage_tb/stimulus  File: E:/SchoolWork/VivadoProjects/DSD2-Lab5/VerToVhdl/VerToVhdl.srcs/sim_1/new/MemoryStageTB.vhd
