@@ -1,0 +1,588 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Mar 30 18:26:11 2023
+| Host         : DESKTOP-5CIH7MF running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file MemoryStage_timing_summary_routed.rpt -pb MemoryStage_timing_summary_routed.pb -rpx MemoryStage_timing_summary_routed.rpx -warn_on_violation
+| Design       : MemoryStage
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                                                Violations  
+---------  ----------------  ---------------------------------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell                                580         
+SYNTH-5    Warning           Mapped onto distributed RAM because of timing constraints  128         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (580)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (5240)
+5. checking no_input_delay (60)
+6. checking no_output_delay (43)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (580)
+--------------------------
+ There are 580 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (5240)
+---------------------------------------------------
+ There are 5240 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (60)
+-------------------------------
+ There are 60 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (43)
+--------------------------------
+ There are 43 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                 5322          inf        0.000                      0                 5322           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay          5322 Endpoints
+Min Delay          5322 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_A/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.513ns  (logic 0.124ns (2.249%)  route 5.389ns (97.751%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.416     5.513    dataMem_inst/mips_mem_reg_256_511_4_4/WE
+    SLICE_X10Y56         RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_A/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_B/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.513ns  (logic 0.124ns (2.249%)  route 5.389ns (97.751%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.416     5.513    dataMem_inst/mips_mem_reg_256_511_4_4/WE
+    SLICE_X10Y56         RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_B/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_C/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.513ns  (logic 0.124ns (2.249%)  route 5.389ns (97.751%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.416     5.513    dataMem_inst/mips_mem_reg_256_511_4_4/WE
+    SLICE_X10Y56         RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_C/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_D/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.513ns  (logic 0.124ns (2.249%)  route 5.389ns (97.751%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.416     5.513    dataMem_inst/mips_mem_reg_256_511_4_4/WE
+    SLICE_X10Y56         RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_4_4/RAMS64E_D/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_A/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.465ns  (logic 0.124ns (2.269%)  route 5.341ns (97.731%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.368     5.465    dataMem_inst/mips_mem_reg_256_511_13_13/WE
+    SLICE_X6Y58          RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_A/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_B/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.465ns  (logic 0.124ns (2.269%)  route 5.341ns (97.731%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.368     5.465    dataMem_inst/mips_mem_reg_256_511_13_13/WE
+    SLICE_X6Y58          RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_B/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_C/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.465ns  (logic 0.124ns (2.269%)  route 5.341ns (97.731%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.368     5.465    dataMem_inst/mips_mem_reg_256_511_13_13/WE
+    SLICE_X6Y58          RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_C/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_D/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.465ns  (logic 0.124ns (2.269%)  route 5.341ns (97.731%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.368     5.465    dataMem_inst/mips_mem_reg_256_511_13_13/WE
+    SLICE_X6Y58          RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_13_13/RAMS64E_D/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_7_7/RAMS64E_A/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.399ns  (logic 0.124ns (2.297%)  route 5.275ns (97.703%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.302     5.399    dataMem_inst/mips_mem_reg_256_511_7_7/WE
+    SLICE_X14Y57         RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_7_7/RAMS64E_A/WE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 MemWrite
+                            (input port)
+  Destination:            dataMem_inst/mips_mem_reg_256_511_7_7/RAMS64E_B/WE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.399ns  (logic 0.124ns (2.297%)  route 5.275ns (97.703%))
+  Logic Levels:           1  (LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  MemWrite (IN)
+                         net (fo=4, unset)            0.973     0.973    dataMem_inst/MemWrite
+    SLICE_X13Y69         LUT3 (Prop_lut3_I2_O)        0.124     1.097 r  dataMem_inst/mips_mem_reg_256_511_0_0_i_1/O
+                         net (fo=128, routed)         4.302     5.399    dataMem_inst/mips_mem_reg_256_511_7_7/WE
+    SLICE_X14Y57         RAMS64E                                      r  dataMem_inst/mips_mem_reg_256_511_7_7/RAMS64E_B/WE
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 seven_seg_controller_inst/refresh_counter_reg[10]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            seven_seg_controller_inst/refresh_counter_reg[10]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           2  (CARRY4=1 FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y74         FDCE                         0.000     0.000 r  seven_seg_controller_inst/refresh_counter_reg[10]/C
+    SLICE_X34Y74         FDCE (Prop_fdce_C_Q)         0.164     0.164 r  seven_seg_controller_inst/refresh_counter_reg[10]/Q
+                         net (fo=1, routed)           0.114     0.278    seven_seg_controller_inst/refresh_counter_reg_n_0_[10]
+    SLICE_X34Y74         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     0.388 r  seven_seg_controller_inst/refresh_counter_reg[8]_i_1/O[2]
+                         net (fo=1, routed)           0.000     0.388    seven_seg_controller_inst/refresh_counter_reg[8]_i_1_n_5
+    SLICE_X34Y74         FDCE                                         r  seven_seg_controller_inst/refresh_counter_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 seven_seg_controller_inst/refresh_counter_reg[14]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            seven_seg_controller_inst/refresh_counter_reg[14]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           2  (CARRY4=1 FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y75         FDCE                         0.000     0.000 r  seven_seg_controller_inst/refresh_counter_reg[14]/C
+    SLICE_X34Y75         FDCE (Prop_fdce_C_Q)         0.164     0.164 r  seven_seg_controller_inst/refresh_counter_reg[14]/Q
+                         net (fo=1, routed)           0.114     0.278    seven_seg_controller_inst/refresh_counter_reg_n_0_[14]
+    SLICE_X34Y75         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     0.388 r  seven_seg_controller_inst/refresh_counter_reg[12]_i_1/O[2]
+                         net (fo=1, routed)           0.000     0.388    seven_seg_controller_inst/refresh_counter_reg[12]_i_1_n_5
+    SLICE_X34Y75         FDCE                                         r  seven_seg_controller_inst/refresh_counter_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 seven_seg_controller_inst/refresh_counter_reg[6]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            seven_seg_controller_inst/refresh_counter_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           2  (CARRY4=1 FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y73         FDCE                         0.000     0.000 r  seven_seg_controller_inst/refresh_counter_reg[6]/C
+    SLICE_X34Y73         FDCE (Prop_fdce_C_Q)         0.164     0.164 r  seven_seg_controller_inst/refresh_counter_reg[6]/Q
+                         net (fo=1, routed)           0.114     0.278    seven_seg_controller_inst/refresh_counter_reg_n_0_[6]
+    SLICE_X34Y73         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     0.388 r  seven_seg_controller_inst/refresh_counter_reg[4]_i_1/O[2]
+                         net (fo=1, routed)           0.000     0.388    seven_seg_controller_inst/refresh_counter_reg[4]_i_1_n_5
+    SLICE_X34Y73         FDCE                                         r  seven_seg_controller_inst/refresh_counter_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[0]
+                            (input port)
+  Destination:            ALUResultOut[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[0] (IN)
+                         net (fo=513, unset)          0.410     0.410    ALUResult[0]
+                                                                      r  ALUResultOut[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[10]
+                            (input port)
+  Destination:            ALUResultOut[10]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[10] (IN)
+                         net (fo=-1, unset)           0.410     0.410    ALUResult[10]
+                                                                      r  ALUResultOut[10] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[11]
+                            (input port)
+  Destination:            ALUResultOut[11]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[11] (IN)
+                         net (fo=-1, unset)           0.410     0.410    ALUResult[11]
+                                                                      r  ALUResultOut[11] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[12]
+                            (input port)
+  Destination:            ALUResultOut[12]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[12] (IN)
+                         net (fo=-1, unset)           0.410     0.410    ALUResult[12]
+                                                                      r  ALUResultOut[12] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[13]
+                            (input port)
+  Destination:            ALUResultOut[13]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[13] (IN)
+                         net (fo=-1, unset)           0.410     0.410    ALUResult[13]
+                                                                      r  ALUResultOut[13] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[14]
+                            (input port)
+  Destination:            ALUResultOut[14]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[14] (IN)
+                         net (fo=-1, unset)           0.410     0.410    ALUResult[14]
+                                                                      r  ALUResultOut[14] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ALUResult[15]
+                            (input port)
+  Destination:            ALUResultOut[15]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.410ns  (logic 0.000ns (0.000%)  route 0.410ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  ALUResult[15] (IN)
+                         net (fo=-1, unset)           0.410     0.410    ALUResult[15]
+                                                                      r  ALUResultOut[15] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

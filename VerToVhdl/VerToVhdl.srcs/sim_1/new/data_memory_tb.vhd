@@ -45,37 +45,46 @@ begin
         w_en <= '1';
         addr <= "00" & x"1B";
         d_in <= x"AAAA5555";
+        
         wait until falling_edge(clk);
         addr <= "00" & x"1C";
         d_in <= x"5555AAAA";
+        
         wait until falling_edge(clk);
         w_en <= '0';
         addr <= "00" & x"1B";
+        
         wait until rising_edge(clk);
         wait for 1 ns;
         if (d_out /= x"AAAA5555") then
             report "addr=" & to_string(addr) & ", read=" & to_string(d_out) & " but should be xAAAA5555";
         end if;
+        
         wait until falling_edge(clk);
         addr <= "00" & x"1C";
+        
         wait until rising_edge(clk);
         wait for 1 ns;
         if (d_out /= x"5555AAAA") then
             report "addr=" & to_string(addr) & ", read=" & to_string(d_out) & " but should be x5555AAAA";
         end if;
+        
         wait until falling_edge(clk);
         w_en <= '0';
         switches <= x"1111";
         addr <= "11" & x"FE";
+        
         wait until rising_edge(clk);
         wait for 1 ns;
         if (d_out /= x"00001111") then
             report "addr=" & to_string(addr) & ", read=" & to_string(d_out) & " but should be x00001111";
         end if;
+        
         wait until falling_edge(clk);
         w_en <= '1';
         addr <= "11" & x"FF";
         d_in <= x"00003333";
+        
         wait until rising_edge(clk);
         wait for 1 ns;
         if (seven_seg /= x"3333") then

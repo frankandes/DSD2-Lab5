@@ -13,6 +13,7 @@ architecture Behavioral of MemoryStage_tb is
             clk : in std_logic;
             rst : in std_logic;
             MemWrite : in std_logic;
+            RegWrite : in std_logic;
             MemtoReg : in std_logic;
             WriteReg : in std_logic_vector(4 downto 0);
             ALUResult : in std_logic_vector(31 downto 0);
@@ -29,15 +30,16 @@ architecture Behavioral of MemoryStage_tb is
     end component;
 
     -- Signals declaration
-    signal clk_tb       : std_logic := '0';
-    signal rst_tb       : std_logic := '0';
-    signal MemWrite_tb  : std_logic := '0';
-    signal MemtoReg_tb  : std_logic := '0';
-    signal WriteReg_tb  : std_logic_vector(4 downto 0) := (others => '0');
-    signal ALUResult_tb : std_logic_vector(31 downto 0) := (others => '0');
-    signal WriteData_tb : std_logic_vector(31 downto 0) := (others => '0');
-    signal Switches_tb  : std_logic_vector(15 downto 0) := (others => '0');
+    signal clk_tb       : std_logic;
+    signal rst_tb       : std_logic;
+    signal MemWrite_tb  : std_logic;
     signal RegWrite_tb  : std_logic;
+    signal RegWriteOut_tb : std_logic;
+    signal MemtoReg_tb  : std_logic;
+    signal WriteReg_tb  : std_logic_vector(4 downto 0);
+    signal ALUResult_tb : std_logic_vector(31 downto 0);
+    signal WriteData_tb : std_logic_vector(31 downto 0);
+    signal Switches_tb  : std_logic_vector(15 downto 0);
     signal MemtoRegOut_tb  : std_logic;
     signal WriteRegOut_tb  : std_logic_vector(4 downto 0);
     signal MemOut_tb   : std_logic_vector(31 downto 0);
@@ -63,6 +65,19 @@ architecture Behavioral of MemoryStage_tb is
 
     type test_array is array (natural range <>) of test_rec;
     constant test_data : test_array := (
+        (MemWrite => '0',
+        MemtoReg => '0',
+        WriteReg => "00000",
+        ALUResult => x"00000000",
+        WriteData => x"00000000",
+        Switches => x"0000",
+        RegWrite => '0',
+        MemtoRegOut => '0',
+        WriteRegOut => "00000",
+        MemOut => x"00000000",
+        ALUResultOut => x"00000000",
+        Active_Digit => "0111",
+        Seven_Seg_Digit => "1000000"),
         (MemWrite => '1',
         MemtoReg => '0',
         WriteReg => "00001",
@@ -74,8 +89,8 @@ architecture Behavioral of MemoryStage_tb is
         WriteRegOut => "00001",
         MemOut => x"00000011",
         ALUResultOut => x"00000001",
-        Active_Digit => "0000",
-        Seven_Seg_Digit => "0000000"),
+        Active_Digit => "0111",
+        Seven_Seg_Digit => "1000000"),
         (MemWrite => '1',
         MemtoReg => '1',
         WriteReg => "10110",
@@ -87,8 +102,8 @@ architecture Behavioral of MemoryStage_tb is
         WriteRegOut => "10110",
         MemOut => x"ABCDEF01",
         ALUResultOut => x"00000011",
-        Active_Digit => "0010",
-        Seven_Seg_Digit => "0000010")
+        Active_Digit => "0111",
+        Seven_Seg_Digit => "1000000")
         );
 
 begin
@@ -99,12 +114,13 @@ begin
             clk => clk_tb,
             rst => rst_tb,
             MemWrite => MemWrite_tb,
+            RegWrite => RegWrite_tb,
             MemtoReg => MemtoReg_tb,
             WriteReg => WriteReg_tb,
             ALUResult => ALUResult_tb,
             WriteData => WriteData_tb,
             Switches => Switches_tb,
-            RegWriteOut => RegWrite_tb,
+            RegWriteOut => RegWriteOut_tb,
             MemtoRegOut => MemtoRegOut_tb,
             WriteRegOut => WriteRegOut_tb,
             MemOut => MemOut_tb,
@@ -125,19 +141,20 @@ begin
     -- Stimulus process
     stimulus : process
     begin
-    -- Reset the module
-    rst_tb <= '1';
-    wait for 20 ns;
-    rst_tb <= '0';
+        rst_tb <= '1';
+        wait for 20 ns;
+        rst_tb <= '0';
+        
         -- Apply test cases
         for i in test_data'range loop
+            RegWrite_tb <= test_data(i).RegWrite;
             MemWrite_tb <= test_data(i).MemWrite;
             MemtoReg_tb <= test_data(i).MemtoReg;
             WriteReg_tb <= test_data(i).WriteReg;
             ALUResult_tb <= test_data(i).ALUResult;
             WriteData_tb <= test_data(i).WriteData;
             Switches_tb <= test_data(i).Switches;
-            wait for 35 ns;
+            wait for 80 ns;
             assert RegWrite_tb = test_data(i).RegWrite
                 report "Error: RegWrite is " & std_logic'image(RegWrite_tb) & " but should be " & std_logic'image(test_data(i).RegWrite);
             assert MemtoRegOut_tb = test_data(i).MemtoRegOut
@@ -152,7 +169,6 @@ begin
                 report "Error: Active_Digit is " & to_hstring(to_bitvector(Active_Digit_tb)) & " but should be " & to_hstring(to_bitvector(test_data(i).Active_Digit)); 
             assert Seven_Seg_Digit_tb = test_data(i).Seven_Seg_Digit
                 report "Error: Seven_Seg_Digit is " & to_hstring(to_bitvector(Seven_Seg_Digit_tb)) & " but should be " & to_hstring(to_bitvector(test_data(i).Seven_Seg_Digit));
-            wait for 5 ns;
         end loop;
     
         -- End testbench

@@ -7,7 +7,7 @@ entity MemoryStage is
         clk : in std_logic;
         rst : in std_logic;
         MemtoReg : in std_logic;
-        RegWrite : in std_logic := '0';
+        RegWrite : in std_logic;
         WriteReg : in std_logic_vector(4 downto 0);
         MemWrite : in std_logic;
         ALUResult : in std_logic_vector(31 downto 0);
